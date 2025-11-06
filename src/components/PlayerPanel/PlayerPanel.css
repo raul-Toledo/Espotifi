@@ -1,0 +1,26 @@
+.button-image {
+  width: 25px;
+  height: 25px;
+  border-radius: 8px;
+  margin: 5px;
+}
+
+.panel-button {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    padding: 8px;
+    background-color: darkslategrey;
+    border: none;
+    cursor: pointer;
+    color: white;
+    margin: 8px;
+    margin-top: 0px;
+    background-image: linear-gradient(to bottom, silver, darkslategrey);
+
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    /* **Corrección para 100% de ancho** */
+    width: 100%;
+    box-sizing: border-box; 
+}

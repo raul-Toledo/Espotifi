@@ -1,0 +1,66 @@
+.album-cover {
+  width: 200px;
+  height: 200px;
+  border-radius: 10px;
+  box-shadow: 2px 2px 4px #000000;
+}
+
+.artist-image {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  box-shadow: 2px 2px 4px #000000;
+}
+
+.header-music {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  gap: 20px;
+  background-image: linear-gradient(to bottom, darkslategrey, silver);
+  padding: 20px;
+  color: white;
+  margin: 8px;
+  margin-bottom: 0px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  
+  /* **Corrección para 100% de ancho** */
+  width: 100%;
+  box-sizing: border-box; 
+ }
+
+ .album-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 5px;
+    margin: 0;
+    
+ }
+
+  .album-song{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0;
+    text-shadow:2px 2px 4px #000000;
+ }
+
+ .album-TextAlbum {
+    font-size: 60px;
+    font-weight: bold;
+    margin: 0;
+    text-shadow:2px 2px 4px #000000;
+ }
+
+ .album-text {
+    font-size: 15;
+    font-weight: 400;
+    margin: 0;
+    font-style: italic;
+    text-shadow:2px 2px 4px #000000;
+ }  
