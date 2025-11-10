@@ -1,26 +1,49 @@
+/**
+ * @file PlayerPanel.css
+ * @brief Archivo de estilos para el componente PlayerPanel.
+ *
+ * Este archivo contiene las reglas de CSS que definen la apariencia y el diseño
+ * del panel de control del reproductor de música. Incluye estilos para los botones
+ * de control y el contenedor principal del panel.
+ */
+
+/**
+ * @section button-image
+ * @description Estilos para las imágenes que funcionan como botones en el panel de control.
+ * Define el tamaño, el radio de los bordes y el margen de cada imagen.
+ */
 .button-image {
-  width: 25px;
-  height: 25px;
-  border-radius: 8px;
-  margin: 5px;
+  width: 25px; /* Ancho de la imagen del botón */
+  height: 25px; /* Altura de la imagen del botón */
+  border-radius: 8px; /* Bordes redondeados para un aspecto más suave */
+  margin: 5px; /* Espacio alrededor de cada botón */
 }
 
+/**
+ * @section panel-button
+ * @description Estilos para el contenedor principal del panel de control.
+ *
+ * Utiliza Flexbox para alinear los botones y define el fondo, el espaciado
+ * y los bordes del panel. El gradiente de fondo le da una apariencia metálica.
+ */
 .panel-button {
-    display: flex;
-    align-items: center;
-    justify-content: left;
-    padding: 8px;
-    background-color: darkslategrey;
-    border: none;
-    cursor: pointer;
-    color: white;
-    margin: 8px;
-    margin-top: 0px;
-    background-image: linear-gradient(to bottom, silver, darkslategrey);
+    display: flex; /* Habilita el modelo de caja flexible para alinear los elementos hijos */
+    align-items: center; /* Centra verticalmente los botones dentro del panel */
+    justify-content: left; /* Alinea los botones a la izquierda del panel */
+    padding: 8px; /* Espaciado interno del panel */
+    background-color: darkslategrey; /* Color de fondo de respaldo */
+    border: none; /* Elimina cualquier borde predeterminado */
+    cursor: pointer; /* Cambia el cursor a una mano para indicar que es interactivo */
+    color: white; /* Color del texto (aunque no hay texto visible) */
+    margin: 8px; /* Margen exterior del panel */
+    margin-top: 0px; /* Elimina el margen superior para que se pegue al componente de arriba */
+    background-image: linear-gradient(to bottom, silver, darkslategrey); /* Crea un gradiente de plateado a gris oscuro */
 
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px; /* Redondea la esquina inferior izquierda */
+    border-bottom-right-radius: 10px; /* Redondea la esquina inferior derecha */
+    
     /* **Corrección para 100% de ancho** */
-    width: 100%;
+    /* Asegura que el panel ocupe todo el ancho disponible, incluyendo padding y borde */
+    width: 100%; 
     box-sizing: border-box; 
 }

@@ -1,3 +1,18 @@
+/**
+ * @file HeaderMusic.css
+ * @description Archivo de estilos para el componente HeaderMusic.
+ * @version 1.0.0
+ * @date 2025-11-10
+ */
+
+/**
+ * @class .album-cover
+ * @description Estiliza la imagen de la portada del álbum.
+ * @property {width} - Ancho de la imagen.
+ * @property {height} - Alto de la imagen.
+ * @property {border-radius} - Radio de los bordes para redondear las esquinas.
+ * @property {box-shadow} - Sombra de la caja para dar un efecto de profundidad.
+ */
 .album-cover {
   width: 200px;
   height: 200px;
@@ -5,6 +20,14 @@
   box-shadow: 2px 2px 4px #000000;
 }
 
+/**
+ * @class .artist-image
+ * @description Estiliza la imagen del artista.
+ * @property {width} - Ancho de la imagen.
+ * @property {height} - Alto de la imagen.
+ * @property {border-radius} - Radio de los bordes para hacer la imagen circular.
+ * @property {box-shadow} - Sombra de la caja para dar un efecto de profundidad.
+ */
 .artist-image {
   width: 50px;
   height: 50px;
@@ -12,6 +35,23 @@
   box-shadow: 2px 2px 4px #000000;
 }
 
+/**
+ * @class .header-music
+ * @description Contenedor principal del encabezado de música.
+ * @property {display} - Utiliza flexbox para alinear los elementos.
+ * @property {align-items} - Centra los elementos verticalmente.
+ * @property {justify-content} - Alinea los elementos a la izquierda.
+ * @property {gap} - Espacio entre los elementos.
+ * @property {background-image} - Gradiente de fondo.
+ * @property {padding} - Relleno interior del contenedor.
+ * @property {color} - Color del texto.
+ * @property {margin} - Margen exterior del contenedor.
+ * @property {margin-bottom} - Margen inferior del contenedor.
+ * @property {border-top-left-radius} - Radio del borde superior izquierdo.
+ * @property {border-top-right-radius} - Radio del borde superior derecho.
+ * @property {width} - Ancho del contenedor al 100%.
+ * @property {box-sizing} - Asegura que el padding y el borde no afecten el ancho total.
+ */
 .header-music {
   display: flex;
   align-items: center;
@@ -30,6 +70,16 @@
   box-sizing: border-box; 
  }
 
+ /**
+ * @class .album-info
+ * @description Contenedor para la información del álbum.
+ * @property {display} - Utiliza flexbox para alinear los elementos.
+ * @property {flex-direction} - Organiza los elementos en una columna.
+ * @property {justify-content} - Centra los elementos verticalmente.
+ * @property {align-items} - Alinea los elementos a la izquierda.
+ * @property {gap} - Espacio entre los elementos.
+ * @property {margin} - Margen exterior del contenedor.
+ */
  .album-info{
     display: flex;
     flex-direction: column;
@@ -40,6 +90,17 @@
     
  }
 
+/**
+ * @class .album-song
+ * @description Contenedor para la información de la canción del álbum.
+ * @property {display} - Utiliza flexbox para alinear los elementos.
+ * @property {flex-direction} - Organiza los elementos en una fila.
+ * @property {gap} - Espacio entre los elementos.
+ * @property {align-items} - Centra los elementos verticalmente.
+ * @property {justify-content} - Distribuye el espacio entre los elementos.
+ * @property {margin} - Margen exterior del contenedor.
+ * @property {text-shadow} - Sombra del texto para mejorar la legibilidad.
+ */
   .album-song{
     display: flex;
     flex-direction: row;
@@ -50,6 +111,14 @@
     text-shadow:2px 2px 4px #000000;
  }
 
+/**
+ * @class .album-TextAlbum
+ * @description Estiliza el texto del nombre del álbum.
+ * @property {font-size} - Tamaño de la fuente.
+ * @property {font-weight} - Grosor de la fuente.
+ * @property {margin} - Margen exterior del texto.
+ * @property {text-shadow} - Sombra del texto para mejorar la legibilidad.
+ */
  .album-TextAlbum {
     font-size: 60px;
     font-weight: bold;
@@ -57,10 +126,19 @@
     text-shadow:2px 2px 4px #000000;
  }
 
+/**
+ * @class .album-text
+ * @description Estiliza el texto general del álbum.
+ * @property {font-size} - Tamaño de la fuente.
+ * @property {font-weight} - Grosor de la fuente.
+ * @property {margin} - Margen exterior del texto.
+ * @property {font-style} - Estilo de la fuente (itálica).
+ * @property {text-shadow} - Sombra del texto para mejorar la legibilidad.
+ */
  .album-text {
     font-size: 15;
     font-weight: 400;
     margin: 0;
     font-style: italic;
     text-shadow:2px 2px 4px #000000;
- }  
+ }
