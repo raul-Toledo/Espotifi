@@ -30,7 +30,7 @@ import { songsData } from '../../data/songsData';
  * @returns {JSX.Element} Un elemento JSX que representa una fila de la tabla de música, listo para ser renderizado por `List` de `react-window`.
  */
 function RowComponent(props) {
-  const { setCurrentSong, setPlaylist, currentSong } = useMusicPlayerStore();
+  const { setCurrentSong, currentSong } = useMusicPlayerStore();
   const song = props.musicList[props.index];
   
   const rowColorClass = props.index % 2 === 0 ? "bg-zinc-700" : "bg-zinc-800";
@@ -40,18 +40,17 @@ function RowComponent(props) {
    * @function handleClick
    * @description Manejador de eventos para el clic en una fila.
    * Cuando un usuario hace clic en una canción de la lista, esta función se encarga de:
-   * 1. Actualizar la lista de reproducción global (`playlist`) en el store de Zustand con la lista de canciones actual.
-   * 2. Establecer la canción seleccionada (`song`) como la canción actual (`currentSong`) en el store, pasando también su índice.
+   * 1. Establecer la canción seleccionada (`song`) como la canción actual (`currentSong`) en el store, pasando también su índice.
    * Esto permite que el reproductor de música sepa qué canción reproducir y cuál es su contexto dentro de la lista.
    */
   const handleClick = () => {
-    setPlaylist(props.musicList);
     setCurrentSong(song, props.index);
   };
 
   return (
     <div 
       className={`grow flex flex-row font-bold ${rowColorClass} hover:bg-zinc-600 transition duration-150 ease-in-out cursor-pointer ${isActive ? 'bg-green-900' : ''}`}
+      data-testid={`song-row-${song.id}`}
       onClick={handleClick}
     >
       <div className="w-5 text-center">
@@ -89,7 +88,17 @@ function RowComponent(props) {
  */
 const LibraryMusic = () => {
     const [size, setSize] = useState(getScrollbarSize);
-    const musicList = songsData;
+    const { playlist, setPlaylist } = useMusicPlayerStore();
+
+    useEffect(() => {
+        // Initialize playlist only if it's empty
+        if (playlist.length === 0) {
+            setPlaylist(songsData);
+        }
+    }, [playlist, setPlaylist]);
+
+    // Use the playlist from the store, which can be updated
+    const musicList = playlist.length > 0 ? playlist : songsData;
 
     return(
     <div className="h-full w-full flex flex-col grow text-white ">

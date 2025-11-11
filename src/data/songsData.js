@@ -56,7 +56,8 @@ export const songsData = [
     plays: "12345",
     filePath: blahBlahBlah,
     cover: balance,
-    artistImage: armin
+    artistImage: armin,
+    favorite: false
   },
   {
     id: "2",
@@ -68,7 +69,8 @@ export const songsData = [
     plays: "62701",
     filePath: crystals,
     cover: crystalsCover,
-    artistImage: david
+    artistImage: david,
+    favorite: false
   },
   {
     id: "3",
@@ -80,7 +82,8 @@ export const songsData = [
     plays: "54321",
     filePath: edgeRunner,
     cover: thisFffire,
-    artistImage: franz
+    artistImage: franz,
+    favorite: false
   },
   {
     id: "4", 
@@ -92,7 +95,8 @@ export const songsData = [
     plays: "98765",
     filePath: rasputinRemix,
     cover: rasputinCover,
-    artistImage: majestic
+    artistImage: majestic,
+    favorite: false
   },
   {
     id: "5",
@@ -104,6 +108,7 @@ export const songsData = [
     plays: "45678",
     filePath: specialz,
     cover: specialzCover,
-    artistImage: king
+    artistImage: king,
+    favorite: false
   }
 ];

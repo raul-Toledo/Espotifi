@@ -32,7 +32,8 @@ export const useAudioPlayer = () => {
     setAudioRef,
     nextSong,
     setDuration,
-    setCurrentTime
+    setCurrentTime,
+    isFavorite
   } = useMusicPlayerStore();
 
   /**
@@ -42,7 +43,9 @@ export const useAudioPlayer = () => {
    * la referencia `audioRef` se ha creado. Permite que otras partes de la aplicación
    * accedan al elemento de audio a través del store si es necesario.
    */
-  useEffect(() => {
+useEffect(() => {
+    // Este efecto se ejecuta solo una vez, cuando el componente se monta.
+    // Establece la referencia del elemento <audio> en el store de Zustand.
     if (audioRef.current) {
       setAudioRef(audioRef.current);
     }
@@ -97,7 +100,7 @@ export const useAudioPlayer = () => {
         audio.removeEventListener('error', handleError);
       };
     }
-  }, [currentSong, setDuration, setCurrentTime, nextSong]);
+  }, [currentSong?.filePath, setDuration, setCurrentTime, nextSong]);
 
   /**
    * @effect
@@ -124,7 +127,7 @@ export const useAudioPlayer = () => {
     } else {
       audio.pause();
     }
-  }, [isPlaying, currentSong]);
+  }, [isPlaying, currentSong?.id]);
 
   return { audioRef };
 };

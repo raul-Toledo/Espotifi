@@ -78,7 +78,8 @@ export const useAlbumData = () => {
     songCount: "11 canciones",
     duration: "1 hora",
     cover: Once,
-    artistImage: Nightwish
+    artistImage: Nightwish,
+    isFavorite: false
   };
 
   /**
@@ -94,7 +95,8 @@ export const useAlbumData = () => {
     songCount: playlist.length > 0 ? `${playlist.length} ${playlist.length === 1 ? 'canción' : 'canciones'}` : "0 canciones",
     duration: calculateTotalDuration(playlist),
     cover: currentSong.cover || Once,
-    artistImage: currentSong.artistImage
+    artistImage: currentSong.artistImage,
+    isFavorite: currentSong.isFavorite || false
   } : defaultAlbum;
 
   return currentAlbumData;

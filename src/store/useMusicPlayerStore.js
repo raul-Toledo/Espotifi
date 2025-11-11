@@ -79,10 +79,7 @@ export const useMusicPlayerStore = create((set, get) => ({
    * @action togglePlay
    * @description Alterna entre el estado de reproducción y pausa.
    */
-  togglePlay: () => {
-    const { isPlaying } = get();
-    set({ isPlaying: !isPlaying });
-  },
+  togglePlay: () => set((state) => ({ isPlaying: !state.isPlaying })),
   
   /**
    * @action play
@@ -148,7 +145,31 @@ export const useMusicPlayerStore = create((set, get) => ({
       currentTime: 0
     });
   },
-  
+
+  /**
+   * @action toggleFavorite
+   * @description Alterna el estado de favorito de la canción actual.
+   */
+  toggleFavorite: () => {
+    const { currentSong, playlist } = get();
+    if (!currentSong) return;
+
+    const newPlaylist = playlist.map(song => {
+      if (song.id === currentSong.id) {
+        return { ...song, favorite: !song.favorite };
+      }
+      return song;
+    });
+
+    set({
+      playlist: newPlaylist,
+      currentSong: {
+        ...currentSong,
+        favorite: !currentSong.favorite,
+      },
+    });
+  },
+
   /**
    * @action previousSong
    * @description Cambia a la canción anterior en la lista de reproducción.

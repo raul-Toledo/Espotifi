@@ -54,6 +54,8 @@ const PlayerPanel = () => {
      * @property {function} nextSong - Función para pasar a la siguiente canción de la lista.
      * @property {function} previousSong - Función para volver a la canción anterior.
      * @property {function} pause - Función para pausar la reproducción.
+     * @property {boolean} isFavorite - Verdadero si la canción actual es marcada como favorita.
+     * @property {function} toggleFavorite - Función para alternar entre marcar y desmarcar como favorita.
      */
     const {
         currentSong,
@@ -62,6 +64,7 @@ const PlayerPanel = () => {
         nextSong,
         previousSong,
         pause,
+        toggleFavorite
     } = useMusicPlayerStore();
 
     /**
@@ -144,11 +147,12 @@ const PlayerPanel = () => {
                 style={{ cursor: 'pointer' }}
             />
             
-            {/* Botón de "Me gusta" (actualmente decorativo) */}
+            {/* Botón de "Me gusta" */}
             <img 
-                src={Unlove} 
+                src={currentSong.favorite ? Love : Unlove} 
                 alt="Me gusta" 
                 className="button-image" 
+                onClick={toggleFavorite}
                 style={{ cursor: 'pointer' }}
             />
         </div>
